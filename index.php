@@ -1,3 +1,23 @@
+<?php
+include 'konekcija.php';
+include 'model/destinacija.php';
+include 'model/vrsta.php';
+
+session_start();
+
+$user="";
+
+if (!isset($_SESSION['admin'])) {
+    header('Location: login.php');
+    exit();
+}
+if (isset($_COOKIE["admin"]))
+    {
+        $user=$_COOKIE["admin"];
+    }
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
