@@ -98,6 +98,14 @@ style="margin-bottom:100px ;background-image: url(css/pozadina.jpeg);
                                     </div>
                                     <div class="form-group">
                                         <select id="vrstaId" name="vrstaId" class="form-control">
+                                        <?php
+                                            $rez = $conn->query("SELECT * from vrsta");
+                                            while ($red = $rez->fetch_array()) {
+                                            ?>
+                                                <option name="value" value="<?php echo $red['vrstaId'] ?>"> <?php echo $red['nazivVrste'] ?></option>
+                                            <?php  }
+                                            ?>
+
                                         </select>
                                     </div>
                                     <div class="form-group">
